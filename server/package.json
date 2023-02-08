@@ -1,0 +1,19 @@
+{
+  "name": "nodejsbackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Frostray1/nodeJsBackend.git"
+  },
+  "author": "Artem Bychkov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Frostray1/nodeJsBackend/issues"
+  },
+  "homepage": "https://github.com/Frostray1/nodeJsBackend#readme"
+}
