@@ -1,6 +1,29 @@
 {
-  "dependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^4.0.0",
-    "prettier": "^2.8.4"
-  }
+	"name": "nodejsbackend",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Frostray1/nodeJsBackend.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Frostray1/nodeJsBackend/issues"
+	},
+	"homepage": "https://github.com/Frostray1/nodeJsBackend#readme",
+	"devDependencies": {
+		"@trivago/prettier-plugin-sort-imports": "^4.0.0",
+		"colors": "^1.4.0",
+		"prettier": "^2.8.4"
+	},
+	"dependencies": {
+		"express": "^4.18.2"
+	}
 }
