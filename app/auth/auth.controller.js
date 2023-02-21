@@ -3,15 +3,28 @@
 // @access  Public
 import { faker } from '@faker-js/faker'
 import asyncHandler from 'express-async-handler'
-import {hash}from "argon2";
+import {hash, verify}from "argon2";
 import { prisma } from '../prisma.js'
 import { generateToken } from './generate-token.js'
 import { UserFields } from '../utils/user.utils.js';
 
 export const authUser = asyncHandler(async (req, res) => {
-	const user = await prisma.user.findMany()
+	const { email, password } = req.body
 
-	res.json(user)
+	const user = await prisma.user.findUnique({
+		where: {
+			email
+		}
+	})
+
+	const isValidPassword = await verify(user.password, password)
+	if (user && isValidPassword) {
+		const token = generateToken(user.id)
+		res.json({ user, token })
+	} else {
+		res.status(401)
+		throw new Error('Email and password are not correct')
+	}
 })
 
 // @desc    register user
@@ -26,6 +39,8 @@ export const registerUser = asyncHandler(async (req, res) => {
 			email
 		}
 	})
+
+
 
 	if (isHaveUser) {
 		res.status(400)
