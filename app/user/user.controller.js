@@ -52,7 +52,7 @@ export const getUserProfile = asyncHandler(async (req, res) => {
 				label: 'Workouts',
 				value: workouts
 			},
-			{
+			{ 
 				label: 'Kgs',
 				value: kgs._sum.weight || 0
 			}
